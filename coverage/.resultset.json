@@ -44,11 +44,11 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         0,
         null,
@@ -81,7 +81,7 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -104,7 +104,7 @@
       "/home/lastone817/swpp/login-counter-rails-test/app/helpers/users_helper.rb": [
         1,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -122,6 +122,6 @@
         null
       ]
     },
-    "timestamp": 1429524803
+    "timestamp": 1429525233
   }
 }
