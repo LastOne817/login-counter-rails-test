@@ -27,21 +27,28 @@ class UsersControllerTest < ActionController::TestCase
     end
 
     test '#login_success' do
-        post :signup, {'username' => 'Romeo', 'password' => 'ilovejuliet'}
+        post :login, {'username' => 'Romeo', 'password' => 'ilovejuliet'}
         json = JSON.parse(response.body)
         assert json['user_name'] == 'Romeo'
         assert json['login_count'] == 101
     end
 
     test '#login_failure' do
-        post :signup, {'username' => 'Shrek', 'password' => 'ilovefiona'}
+        post :login, {'username' => 'Shrek', 'password' => 'ilovefiona'}
         json = JSON.parse(response.body)
         assert json['error_code'] == -4
     end
 
     test '#logout' do
         get :logout
-        assert_redirect_to root_path
+        assert_redirected_to root_path
+    end
+
+    test '#clearData' do
+        post :clear_data
+        post :login, {'username' => 'Romeo', 'password' => 'ilovejuliet'}
+        json = JSON.parse(response.body)
+        assert json['error_code'] == -4
     end
   # test "the truth" do
   #   assert true
